@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Est. 15th July 2025 😉</title>
+    <title>14th Feb 2026</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -390,8 +390,8 @@
 <body>
     <div class="game-container" id="gameContainer">
         <div class="header">
-            <h1>💝 Est. 15th July 2025 😉</h1>
-            <p>Catch the falling hearts to fill the love meter</p>
+            <h1>Shahina's coordination tester</h1>
+            <p>Catch the things with the basket meter thingy</p>
         </div>
 
         <div class="love-meter-container">
@@ -408,9 +408,9 @@
     </div>
 
     <div class="question-modal" id="questionModal">
-        <h2>💝 shahina will you be my Valentine?</h2>
+        <h2> shahina will you be my Valentine?</h2>
         <div class="modal-buttons">
-            <button class="modal-btn yes-btn" onclick="sayYes()">Yes! 💕</button>
+            <button class="modal-btn yes-btn" onclick="sayYes()"> Only Yes </button>
         </div>
     </div>
 
@@ -435,7 +435,7 @@
         let heartSpeed = 2000; // Faster initial speed
         let speedBoostActive = false;
 
-        // Mouse/Touch tracking for basket
+     
         let basketX = window.innerWidth / 2 - 50;
 
         function updateBasketPosition(x) {
@@ -455,17 +455,17 @@
             }
         });
 
-        // Initialize basket position
+
         updateBasketPosition(window.innerWidth / 2);
 
-        // Create falling hearts - MORE CHALLENGING!
+
         function createHeart() {
             if (!gameActive) return;
 
             const heart = document.createElement('div');
             heart.className = 'falling-heart';
             
-            // Create img element for GIF
+
             const img = document.createElement('img');
             
             // Use shahina1.gif through shahina6.gif as falling GIFs
@@ -477,18 +477,18 @@
             heart.style.left = Math.random() * (window.innerWidth - 60) + 'px';
             heart.style.top = '-60px';
 
-            // Make it challenging - hearts fall FASTER and more unpredictably
+     
             const duration = 1500 + Math.random() * 1500; // 1.5-3 seconds (FAST!)
             heart.style.animationDuration = duration + 'ms';
 
-            // Sometimes hearts zigzag!
+
             if (Math.random() > 0.7) {
                 heart.style.animation = `fall ${duration}ms linear, wiggle 0.5s ease-in-out infinite`;
             }
 
             gameArea.appendChild(heart);
 
-            // Check for collision
+
             const checkCollision = setInterval(() => {
                 if (!gameActive || !document.body.contains(heart)) {
                     clearInterval(checkCollision);
@@ -498,7 +498,7 @@
                 const heartRect = heart.getBoundingClientRect();
                 const basketRect = basket.getBoundingClientRect();
 
-                // Tighter collision detection for more challenge
+   
                 const tolerance = 20;
                 if (
                     heartRect.bottom >= basketRect.top + tolerance &&
@@ -511,7 +511,7 @@
                 }
             }, 30);
 
-            // Remove heart after animation
+   
             setTimeout(() => {
                 if (document.body.contains(heart)) {
                     heart.remove();
@@ -523,25 +523,25 @@
             score++;
             updateScore();
 
-            // Create particle effect
+
             const heartRect = heart.getBoundingClientRect();
             createParticles(heartRect.left + heartRect.width / 2, heartRect.top + heartRect.height / 2);
 
-            // Funny messages as you catch hearts!
+     
             const funnyMessages = [
-                "NICE CATCH! 🔥",
-                "YESSS! 💪",
-                "SMOOTH! 😎",
-                "GOT IT! ⭐",
-                "CRUSHING IT! 🎯",
-                "LEGEND! 🏆",
-                "OHHH! 🚀",
-                "UNSTOPPABLE! ⚡",
-                "BEAST MODE! 🦁",
-                "AMAZING! ✨"
+                "NICE ONE BABY! 🔥",
+                "YESSSIR! 💪",
+                "GOAT POOPIE! 😎",
+                "SHAHINAAAAAA ⭐",
+                "ARCHIEEEEEEE WOOF! 🎯",
+                "676767676767! 🏆",
+                "ROYAL FALCONNN! 🚀",
+                "TOTTENHAM ARE SHIT! ⚡",
+                "LETS GOOOOOOOO! 🦁",
+                "KEEP GOUNG COME ON! ✨"
             ];
 
-            // Show random funny message
+   
             if (Math.random() > 0.5) {
                 showFloatingText(funnyMessages[Math.floor(Math.random() * funnyMessages.length)], 
                                 heartRect.left + heartRect.width / 2, 
@@ -550,11 +550,11 @@
 
             heart.remove();
 
-            // Screen shake
+    
             gameContainer.classList.add('screen-shake');
             setTimeout(() => gameContainer.classList.remove('screen-shake'), 300);
 
-            // Speed boost every 3 hearts!
+       
             if (score % 3 === 0 && score < maxScore) {
                 activateSpeedBoost();
             }
@@ -585,10 +585,10 @@
             if (speedBoostActive) return;
             speedBoostActive = true;
             
-            // Visual feedback
+        
             gameContainer.style.animation = 'pulse 0.3s ease-in-out 3';
             
-            // Hearts fall EVEN FASTER for 5 seconds
+
             const oldSpeed = heartSpeed;
             heartSpeed = 800;
             clearInterval(heartInterval);
@@ -628,7 +628,7 @@
             loveMeter.style.width = percentage + '%';
             scoreDisplay.textContent = `${score} / ${maxScore} ❤️`;
 
-            // Change color based on progress
+    
             if (percentage >= 80) {
                 loveMeter.style.background = 'linear-gradient(90deg, #ffd93d, #ffed4e, #fff78e)';
                 loveMeter.style.boxShadow = '0 0 30px rgba(255, 217, 61, 0.8)';
@@ -644,17 +644,17 @@
             // Remove all falling hearts
             document.querySelectorAll('.falling-heart').forEach(h => h.remove());
 
-            // Epic celebration!
+       
             createMassiveFireworks();
 
-            // Show question modal after a moment
+      
             setTimeout(() => {
                 questionModal.style.display = 'block';
             }, 1500);
         }
 
         function createMassiveFireworks() {
-            // HUGE fireworks celebration before the question
+      
             for (let i = 0; i < 30; i++) {
                 setTimeout(() => createFirework(), i * 50);
             }
@@ -664,35 +664,32 @@
             questionModal.style.display = 'none';
             document.getElementById('celebration').style.display = 'block';
 
-            // MASSIVE fireworks
+ 
             for (let i = 0; i < 80; i++) {
                 setTimeout(() => createFirework(), i * 80);
             }
 
-            // Pumpkin rain!
             const pumpkinInterval = setInterval(createPumpkin, 150);
             setTimeout(() => clearInterval(pumpkinInterval), 12000);
         }
 
         function playAgain() {
-            // Reset everything
+ 
             score = 0;
             gameActive = true;
             heartSpeed = 2000;
             speedBoostActive = false;
             
-            // Hide celebration, show game
             document.getElementById('celebration').style.display = 'none';
             document.getElementById('question-container').style.display = 'block';
             
-            // Reset love meter
+
             updateScore();
             
-            // Clear any existing intervals
             clearInterval(heartInterval);
             clearInterval(difficultyTimer);
             
-            // Restart game
+  
             heartInterval = setInterval(createHeart, heartSpeed);
             
             // Restart difficulty timer
@@ -747,10 +744,9 @@
             }
         }
 
-        // Start the game!
+ 
         heartInterval = setInterval(createHeart, heartSpeed);
 
-        // Gradually increase difficulty - hearts spawn MORE frequently
         let difficultyTimer = setInterval(() => {
             if (gameActive && heartSpeed > 1000) {
                 heartSpeed -= 150;

@@ -354,76 +354,80 @@
             50% { filter: hue-rotate(30deg); }
         }
 
-        /* Mobile refinements + bigger basket only on mobile */
-        @media (max-width: 600px) {
-            body {
-                overflow: hidden;
-            }
+/* Mobile refinements + bigger basket only on mobile */
+@media (max-width: 600px) {
+    body {
+        overflow: hidden;
+    }
 
-            .header {
-                padding: 18px 14px;
-            }
+    .header {
+        padding: 18px 14px;
+    }
 
-            .header h1 {
-                font-size: 1.55em;
-                line-height: 1.15;
-            }
+    .header h1 {
+        font-size: 1.55em;
+        line-height: 1.15;
+    }
 
-            .header p {
-                font-size: 0.98em;
-                line-height: 1.25;
-            }
+    .header p {
+        font-size: 0.98em;
+        line-height: 1.25;
+    }
 
-            .love-meter-container {
-                width: 92%;
-                margin: 12px auto 8px;
-            }
+    .love-meter-container {
+        width: 92%;
+        margin: 12px auto 8px;
+    }
 
-            .love-meter {
-                height: 34px;
-                border-radius: 18px;
-            }
+    .love-meter {
+        height: 34px;
+        border-radius: 18px;
+    }
 
-            .basket {
-                font-size: 4.4em;
-                width: 120px;
-                height: 90px;
-                bottom: calc(14px + env(safe-area-inset-bottom));
-            }
+    .basket {
+        font-size: 4.4em;
+        width: 120px;
+        height: 90px;
 
-            .falling-heart {
-                width: 48px;
-                height: 48px;
-            }
+        /* move it up so it won't sit behind the mobile bottom bar */
+        bottom: calc(90px + env(safe-area-inset-bottom));
+        transition: left 0.08s linear;
+    }
 
-            .question-modal,
-            .celebration {
-                padding: 28px 18px;
-                border-radius: 18px;
-            }
+    .falling-heart {
+        width: 48px;
+        height: 48px;
+    }
 
-            .question-modal h2,
-            .celebration h2 {
-                font-size: 2em;
-                line-height: 1.1;
-            }
+    .question-modal,
+    .celebration {
+        padding: 28px 18px;
+        border-radius: 18px;
+    }
 
-            .celebration p {
-                font-size: 1.02em;
-                line-height: 1.35;
-            }
+    .question-modal h2,
+    .celebration h2 {
+        font-size: 2em;
+        line-height: 1.1;
+    }
 
-            .modal-btn {
-                padding: 14px 26px;
-                font-size: 1.05em;
-                border-radius: 12px;
-            }
+    .celebration p {
+        font-size: 1.02em;
+        line-height: 1.35;
+    }
 
-            .game-area {
-                touch-action: none;
-            }
-        }
-    </style>
+    .modal-btn {
+        padding: 14px 26px;
+        font-size: 1.05em;
+        border-radius: 12px;
+    }
+
+    .game-area {
+        touch-action: none;
+    }
+}
+</style>
+
 </head>
 <body>
     <div class="game-container" id="gameContainer">

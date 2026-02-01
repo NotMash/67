@@ -494,13 +494,13 @@
             basket.style.left = (areaRect.width / 2 - basketWidth / 2) + 'px';
         }
 
-        // Mouse control (desktop)
+        // shcmucky mouse moving finally 
         document.addEventListener('mousemove', (e) => {
             if (!gameActive) return;
             clampBasketToGameArea(e.clientX);
         });
 
-        // Touch control (mobile) + prevent scroll while swiping
+        // Touch contril for mobile phone okahy iots wokring now
         document.addEventListener('touchmove', (e) => {
             if (!gameActive) return;
             e.preventDefault();
